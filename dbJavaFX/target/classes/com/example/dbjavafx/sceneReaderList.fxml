@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="974.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbjavafx.SceneReaderController">
+    <children>
+        <MenuBar VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open…" />
+                        <Menu mnemonicParsing="false" text="Open Recent" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As…" />
+                        <MenuItem mnemonicParsing="false" text="Revert" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Preferences…" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Quit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Cut" />
+                        <MenuItem mnemonicParsing="false" text="Copy" />
+                        <MenuItem mnemonicParsing="false" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Select All" />
+                        <MenuItem mnemonicParsing="false" text="Unselect All" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="375.0" prefWidth="980.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button layoutX="31.0" layoutY="30.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="42.0" prefWidth="176.0" text="Back To Home">
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <TableView fx:id="table" layoutX="31.0" layoutY="119.0" prefHeight="200.0" prefWidth="707.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="col_firstName" prefWidth="136.0" text="First Name" />
+                  <TableColumn fx:id="col_middleName" prefWidth="137.0" text="Middle Name" />
+                  <TableColumn fx:id="col_lastName" minWidth="0.0" prefWidth="107.0" text="Last Name" />
+                  <TableColumn fx:id="col_phone" prefWidth="125.0" text="Phone" />
+                  <TableColumn fx:id="col_birthDate" prefWidth="125.0" text="Birth Date" />
+                  <TableColumn fx:id="col_serialPassport" prefWidth="125.0" text="Serial of Passport" />
+                  <TableColumn fx:id="col_numberPassport" prefWidth="125.0" text="Number of Passport" />
+                  <TableColumn fx:id="col_address" prefWidth="125.0" text="Address" />
+              </columns>
+            </TableView>
+            <Button fx:id="rfrButton" layoutX="232.0" layoutY="30.0" mnemonicParsing="false" onAction="#refreshReaderTableBtn" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: green;" text="Refresh Table" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <VBox fx:id="vBox" alignment="TOP_CENTER" layoutX="777.0" layoutY="72.0" prefHeight="200.0" prefWidth="176.0" spacing="20.0">
+               <children>
+                  <Button fx:id="addReaderBtn" mnemonicParsing="false" onAction="#switchToSceneAddReader" prefHeight="35.0" prefWidth="135.0" style="-fx-background-color: #F57F17;" text="Додати читача">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="deleteReaderBtn" mnemonicParsing="false" onAction="#deleteSelectedReader" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #F57F17;" text="Видалити читача">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="editReaderBtn" mnemonicParsing="false" onAction="#editSelectedReader" prefHeight="35.0" prefWidth="183.0" style="-fx-background-color: #F57F17;" text="Змінити дані читача">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <CheckBox fx:id="editTableCheckBox" layoutX="820.0" layoutY="30.0" mnemonicParsing="false" onAction="#isCheckedBox" text="Edit Table">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </CheckBox>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>
